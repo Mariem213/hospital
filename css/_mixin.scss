@@ -1,0 +1,113 @@
+@mixin transition {
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+}
+
+@mixin transform-translate {
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+@mixin transform-scale {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+@mixin transform-scale-0 {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+}
+
+@mixin transform-scale-1 {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+
+@mixin d-f {
+    display: flex;
+    align-items: center;
+}
+
+@mixin g-g {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+}
+
+@mixin b-r {
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+
+@mixin b-r-50 {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+@mixin box {
+    border: $border;
+    box-shadow: $box-shadow;
+    padding: 2.5rem;
+    @include b-r;
+    background: #fff;
+    text-align: center;
+}
+
+@mixin f-image {
+    flex: 1 1 45rem;
+    img {
+        width: 100%;
+    }
+}
+
+@mixin h3 {
+    font-size: 2.5rem;
+    color: $dark-gray;
+    padding: 0.5rem 0;
+}
+
+@mixin p {
+    font-size: 1.7rem;
+    color: $light-gray;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+@mixin Xs {
+    @media (max-width: 450px) {
+        @content;
+    }
+}
+
+@mixin Sm {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin Md {
+    @media (max-width: 991px) {
+        @content;
+    }
+}

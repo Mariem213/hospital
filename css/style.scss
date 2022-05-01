@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;&display=swap');
+@import "variables";
+@import "extend";
+@import "mixin";
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    text-decoration: none;
+    @include transition;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+
+/* --------- Header Section --------- */
+
+.header {
+    padding: 2rem 9%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    @include d-f;
+    justify-content: space-between;
+    background: #fff;
+    .logo {
+        font-size: 2.5rem;
+        color: $dark-gray;
+        i {
+            color: $green;
+        }
+    }
+    .navbar a {
+        font-size: 1.7rem;
+        color: $light-gray;
+        margin-left: 2rem;
+        &:hover {
+            color: $green;
+        }
+    }
+    #menu-bar {
+        font-size: 2.5rem;
+        @include b-r;
+        background: #eee;
+        color: $green;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        display: none;
+    }
+}
+
+
+/* --------- Home Section --------- */
+
+.home {
+    @include d-f;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 10rem;
+    .image {
+        @include f-image;
+    }
+    .content {
+        flex: 1 1 45rem;
+        h3 {
+            @include h3;
+            line-height: 1.8;
+            text-shadow: $text-shadow;
+            font-size: 4.5rem;
+        }
+        p {
+            @include p;
+        }
+    }
+}
+
+
+/* --------- Icons Section --------- */
+
+.icons {
+    @include g-g;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    padding: 5rem auto;
+    .icons-content {
+        @include box;
+        i {
+            font-size: 4.5rem;
+            color: $green;
+            padding-bottom: 0.7rem;
+        }
+        h3 {
+            @include h3;
+            padding: 0.5rem 0;
+            text-shadow: $text-shadow;
+            font-size: 4.5rem;
+        }
+        p {
+            @include p;
+            padding: 0;
+        }
+    }
+}
+
+
+/* --------- Services Section --------- */
+
+.services {
+    padding-bottom: 5rem;
+    .box-content {
+        @include g-g;
+        .box {
+            @include box;
+            text-align: left;
+            i {
+                color: $green;
+                font-size: 5rem;
+                padding-bottom: 0.5rem;
+            }
+            h3 {
+                @include h3;
+            }
+            p {
+                @include p;
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+
+/* --------- About Section --------- */
+
+.about .row {
+    @include d-f;
+    flex-wrap: wrap;
+    gap: 2rem;
+    .image {
+        @include f-image;
+    }
+    .content {
+        flex: 1 1 45rem;
+        h3 {
+            @include h3;
+            font-size: 4rem;
+            line-height: 1.8;
+            text-shadow: $text-shadow;
+        }
+        p {
+            @include p;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+/* --------- Doctors Section --------- */
+
+.doctors {
+    padding-bottom: 5rem;
+    .box-content {
+        @include g-g;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        .box {
+            @include box;
+            img {
+                height: 20rem;
+                border: $border;
+                @include b-r;
+                margin: 1rem auto;
+            }
+            h3 {
+                @include h3;
+            }
+            span {
+                color: $green;
+                font-size: 1.5rem;
+            }
+            .share {
+                padding-top: 2rem;
+                a {
+                    height: 5rem;
+                    width: 5rem;
+                    line-height: 4.5rem;
+                    font-size: 2rem;
+                    color: $green;
+                    border: $border;
+                    @include b-r;
+                    margin: 0.3rem;
+                    &:hover {
+                        background: $green;
+                        color: #fff;
+                        box-shadow: $box-shadow;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* --------- Booking Section --------- */
+
+.book .row {
+    @include d-f;
+    flex-wrap: wrap;
+    gap: 2rem;
+    .image {
+        @include f-image;
+    }
+    form {
+        flex: 1 1 45rem;
+        background: #fff;
+        border: $border;
+        box-shadow: $box-shadow;
+        text-align: center;
+        padding: 2rem;
+        @include b-r;
+        h3 {
+            @include h3;
+        }
+        .box {
+            width: 100%;
+            margin: 0.7rem 0;
+            @include b-r;
+            border: $border;
+            font-size: 1.6rem;
+            color: $dark-gray;
+            text-transform: none;
+            padding: 1rem;
+        }
+        .btn {
+            padding: 1rem 4rem;
+        }
+    }
+}
+
+
+/* --------- Review Section --------- */
+
+.review {
+    padding-bottom: 5rem;
+    .box-content {
+        @include g-g;
+        .box {
+            @include box;
+            position: relative;
+            overflow: hidden;
+            z-index: 0;
+            &::before {
+                content: '';
+                position: absolute;
+                top: -4rem;
+                left: 50%;
+                @include transform-translate;
+                background: $green;
+                border-bottom-left-radius: 50%;
+                border-bottom-right-radius: 50%;
+                height: 25rem;
+                width: 120%;
+                z-index: -1;
+            }
+            img {
+                height: 10rem;
+                width: 10rem;
+                @include b-r-50;
+                object-fit: cover;
+                border: 0.5rem solid #fff;
+            }
+            h3 {
+                @include h3;
+                color: #fff;
+            }
+            .stars i {
+                color: #fff;
+                font-size: 1.5rem;
+            }
+            .text {
+                @include p;
+                padding-top: 4rem;
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+
+
+/* --------- Blogs Section --------- */
+
+.blogs {
+    padding-bottom: 5rem;
+    .box-content {
+        @include g-g;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        .box {
+            @include box;
+            text-align: left;
+            .image {
+                height: 20rem;
+                overflow: hidden;
+                @include b-r;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            &:hover .image {
+                img {
+                    @include transform-scale;
+                }
+            }
+            .content {
+                padding-top: 1rem;
+                .icon {
+                    padding: 1rem 0;
+                    @include d-f;
+                    justify-content: space-between;
+                    a {
+                        font-size: 1.4rem;
+                        color: $light-gray;
+                        &:hover {
+                            color: $green;
+                        }
+                        i {
+                            padding-right: 0.5rem;
+                            color: $green;
+                        }
+                    }
+                }
+                h3 {
+                    @include h3;
+                }
+                p {
+                    @include p;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+
+/* --------- Footer --------- */
+
+.footer {
+    .box-content {
+        @include g-g;
+        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+        .box {
+            h3 {
+                @include h3;
+            }
+            a {
+                display: block;
+                font-size: 1.5rem;
+                color: $light-gray;
+                padding: 1rem 0;
+                i {
+                    padding-right: 0.5rem;
+                    color: $green;
+                }
+                &:hover i {
+                    padding-right: 2rem;
+                }
+            }
+        }
+    }
+    .created {
+        padding: 2rem 1rem 1rem;
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 2rem;
+        color: $light-gray;
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        span {
+            color: $green;
+        }
+    }
+}
+
+
+/* --------- Media Queries --------- */
+
+@import "media";
